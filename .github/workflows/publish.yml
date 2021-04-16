@@ -29,20 +29,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Connection 
+      - name: Check out the repo
         uses: actions/checkout@v2
+      - name: Push to GitHub Packages
+        uses: docker/build-push-action@v1
         with:
          # repo-token: ${{ secrets.GITHUB_TOKEN }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-          registry: ghcr.io            
+          registry: docker.pkg.github.com
+          repository: foxbandykoot/tp_ci_cd/tp_ci_cd_iso
+          tag_with_ref: true
+            
   #           username: ${{ github.repository_owner }}
-      - name: Build the tp_ci_cd Docker image 
-        run: |
-          echo $CR_PAT | docker login ghcr.io -u FoxBandyKoot --password-stdin
-          docker build --tag ghcr.io/foxbandykoot/tp_ci_cd:latest .
-          docker run ghcr.io/foxbandykoot/tp_ci_cd:latest
-          docker push ghcr.io/foxbandykoot/tp_ci_cd:latest
+#       - name: Build the tp_ci_cd Docker image 
+#         run: |
+#           echo $CR_PAT | docker login ghcr.io -u FoxBandyKoot --password-stdin
+#           docker build --tag ghcr.io/foxbandykoot/tp_ci_cd:latest .
+#           docker run ghcr.io/foxbandykoot/tp_ci_cd:latest
+#           docker push ghcr.io/foxbandykoot/tp_ci_cd:latest
 
 
 
