@@ -32,8 +32,10 @@ jobs:
       - name: Connection 
         uses: actions/checkout@v2
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-  #           registry: ghcr.io            
+         # repo-token: ${{ secrets.GITHUB_TOKEN }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: ghcr.io            
   #           username: ${{ github.repository_owner }}
       - name: Build the tp_ci_cd Docker image 
         run: |
