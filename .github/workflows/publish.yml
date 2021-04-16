@@ -38,7 +38,7 @@ jobs:
       - name: Build the tp_ci_cd Docker image 
         run: |
           echo $CR_PAT | docker login ghcr.io -u FoxBandyKoot --password-stdin
-          docker build . --tag ghcr.io/foxbandykoot/tp_ci_cd:latest
+          docker build --tag ghcr.io/foxbandykoot/tp_ci_cd:latest .
           docker run ghcr.io/foxbandykoot/tp_ci_cd:latest
           docker push ghcr.io/foxbandykoot/tp_ci_cd:latest
 
