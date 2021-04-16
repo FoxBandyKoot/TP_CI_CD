@@ -30,20 +30,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    #- uses: actions/checkout@v2
-    - uses: login-action@v1
 
-    - name: Build the tp_ci_cd Docker image
-      env:
-        registry: ghcr.io
-        CR_PAT: ${{ secrets.CR_PAT }}
-        
-        #username: FoxBandyKoot
-        username: ${{ github.repository_owner }}
-      run: |
-        echo $CR_PAT | docker login ghcr.io -u FoxBandyKoot --password-stdin
-        docker build . --tag ghcr.io/foxbandykoot/tp_ci_cd:latest
-        docker run ghcr.io/foxbandykoot/tp_ci_cd:latest
-        docker push ghcr.io/foxbandykoot/tp_ci_cd:latest
-      
+    #- uses: login-action@v1
+    - uses: actions/checkout@v2
+      #- name: Build the tp_ci_cd Docker image
+
+      with:
+        repo-token: ${{ secrets.CR_PAT }}
+#             registry: ghcr.io
+            
+#             username: ${{ github.repository_owner }}
+
+        run: |
+          echo $CR_PAT | docker login ghcr.io -u FoxBandyKoot --password-stdin
+          docker build . --tag ghcr.io/foxbandykoot/tp_ci_cd:latest
+          docker run ghcr.io/foxbandykoot/tp_ci_cd:latest
+          docker push ghcr.io/foxbandykoot/tp_ci_cd:latest
+    
+    
+
+
+
 
