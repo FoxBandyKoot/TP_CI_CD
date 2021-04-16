@@ -20,32 +20,31 @@
 
 name: publish
 
-on: 
-  push:
-    branches:
-      -main
+on: push
+#     branches:
+#       -main
 
-jobs:
-  publish-hello-world-image:
-    runs-on: ubuntu-latest
+# jobs:
+#   publish-hello-world-image:
+#     runs-on: ubuntu-latest
 
-    steps:
+#     steps:
 
     #- uses: login-action@v1
-    - uses: actions/checkout@v2
+#     - uses: actions/checkout@v2
       #- name: Build the tp_ci_cd Docker image
 
-      with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
+#       with:
+#         repo-token: ${{ secrets.GITHUB_TOKEN }}
 #             registry: ghcr.io
             
 #             username: ${{ github.repository_owner }}
 
-        run: |
-          echo $CR_PAT | docker login ghcr.io -u FoxBandyKoot --password-stdin
-          docker build . --tag ghcr.io/foxbandykoot/tp_ci_cd:latest
-          docker run ghcr.io/foxbandykoot/tp_ci_cd:latest
-          docker push ghcr.io/foxbandykoot/tp_ci_cd:latest
+#         run: |
+#           echo $CR_PAT | docker login ghcr.io -u FoxBandyKoot --password-stdin
+#           docker build . --tag ghcr.io/foxbandykoot/tp_ci_cd:latest
+#           docker run ghcr.io/foxbandykoot/tp_ci_cd:latest
+#           docker push ghcr.io/foxbandykoot/tp_ci_cd:latest
     
     
 
