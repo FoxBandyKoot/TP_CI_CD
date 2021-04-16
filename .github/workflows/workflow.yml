@@ -1,0 +1,27 @@
+name: workflow_tp
+
+on:
+  
+  push: 
+    branches:
+      -develop
+  
+  pull_request:
+    branches:
+      -main
+      
+  page_build:
+  release:
+    types: # This configuration does not affect the page_build event above
+      - created
+      
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag TP_CI_CD_ISO:$(date +%s)
