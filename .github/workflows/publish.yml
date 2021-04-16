@@ -36,7 +36,9 @@ jobs:
       env:
         registry: ghcr.io
         CR_PAT: ${{ secrets.CR_PAT }}
-        username: ${{ github.repository_owner }}
+        #login-action@v1
+        username: FoxBandyKoot
+        #username: ${{ github.repository_owner }}
       run: |
         echo $CR_PAT | docker login ghcr.io -u FoxBandyKoot --password-stdin
         docker build . --tag ghcr.io/foxbandykoot/tp_ci_cd:latest
