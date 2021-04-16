@@ -27,16 +27,16 @@ on:
 
 jobs:
   publish-hello-world-image:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
 
-    - name: Build the TP_CI_CD Docker image
+    - name: Build the tp_ci_cd Docker image
       run: |
         echo $CR_PAT | docker login ghcr.io -u FoxBandyKoot --password-stdin
-        docker build . --tag ghcr.io/FoxBandyKoot/TP_CI_CD:latest
-        docker run ghcr.io/FoxBandyKoot/TP_CI_CD:latest
-        docker push ghcr.io/FoxBandyKoot/TP_CI_CD:latest
+        docker build . --tag ghcr.io/FoxBandyKoot/tp_ci_cd:latest
+        docker run ghcr.io/FoxBandyKoot/tp_ci_cd:latest
+        docker push ghcr.io/FoxBandyKoot/tp_ci_cd:latest
       env:
         CR_PAT: ${{ secrets.CR_PAT }}
