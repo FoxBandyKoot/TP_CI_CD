@@ -20,7 +20,7 @@
 
 name: publish
 
-on: [push]
+on: push
 
 jobs:
   publish-hello-world-image:
