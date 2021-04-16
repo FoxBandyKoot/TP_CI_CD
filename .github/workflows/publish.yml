@@ -29,16 +29,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
-  #- uses: login-action@v1
-    - uses: actions/checkout@v2
-    - name: Build the tp_ci_cd Docker image
-
-      with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-#           registry: ghcr.io            
-#           username: ${{ github.repository_owner }}
-
+      - name: Connection 
+        uses: actions/checkout@v2
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+  #           registry: ghcr.io            
+  #           username: ${{ github.repository_owner }}
+      - name: Build the tp_ci_cd Docker image 
         run: |
           echo $CR_PAT | docker login ghcr.io -u FoxBandyKoot --password-stdin
             docker build . --tag ghcr.io/foxbandykoot/tp_ci_cd:latest
