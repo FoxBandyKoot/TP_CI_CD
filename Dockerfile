@@ -1,5 +1,6 @@
 # On utilise la version 10.2.1 de node sur un linux alpine
 FROM node:10.20.1-alpine3.9
+USER ContainerAdministrator
 
 # On créer un dossier pour notre API
 RUN mkdir -p /srv/app/api 
