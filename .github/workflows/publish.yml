@@ -33,13 +33,16 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Build the tp_ci_cd Docker image
+      env:
+        registry: ghcr.io
+        CR_PAT: ${{ secrets.CR_PAT }}
+        #login-action@v1
+        username: FoxBandyKoot
+        #username: ${{ github.repository_owner }}
       run: |
         echo $CR_PAT | docker login ghcr.io -u FoxBandyKoot --password-stdin
         docker build . --tag ghcr.io/foxbandykoot/tp_ci_cd:latest
         docker run ghcr.io/foxbandykoot/tp_ci_cd:latest
         docker push ghcr.io/foxbandykoot/tp_ci_cd:latest
-      env:
-        registry: ghcr.io
-        CR_PAT: ${{ secrets.CR_PAT }}
-        username: ${{ github.repository_owner }}
+      
 
