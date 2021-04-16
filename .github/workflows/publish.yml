@@ -39,4 +39,7 @@ jobs:
         docker run ghcr.io/foxbandykoot/tp_ci_cd:latest
         docker push ghcr.io/foxbandykoot/tp_ci_cd:latest
       env:
+        registry: ghcr.io
         CR_PAT: ${{ secrets.CR_PAT }}
+        username: ${{ github.repository_owner }}
+
