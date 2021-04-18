@@ -18,7 +18,7 @@
 #           repository: FoxBandyKoot/TP_CI_CD
 #           tag_with_ref: true
 
-name: publish
+name: Publish Docker image
 
 on: 
   push:
