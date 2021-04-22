@@ -22,15 +22,18 @@ Finally, we want to bring all our tools into one to speed up navigation.
 
 [Tests](https://sonarcloud.io/dashboard?id=FoxBandyKoot_TP_CI_CD)
 
-Unit tests on ... because ...
-Security tests on ... because ...
+Unit tests on SonarCloud because ...
+Security tests on SonarCloud because ...
 
 
-Difficulties encountered: New to yaml format, github actions documentation really huge => hard to know where to start
+Difficulties encountered: New to yaml format, github actions documentation really huge => hard to know where to start.
+
 
 Different deployment possible : 
 
-We choose to deploy on ... because ...
+We choose to deploy on Firebase because it can handles more than static websites.
+Net
+
 
 The paradigms used are ... because ...
 
