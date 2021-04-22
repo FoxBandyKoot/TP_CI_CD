@@ -3,7 +3,7 @@ const chai = require ('chai');
 const request = require ('supertest');
 
 const app = express ();
-app.disable("x-powered-by");
+//app.disable("x-powered-by");
 
 describe('Task API Routes', function() {
     // This function will run before every test to clear database
