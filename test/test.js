@@ -5,7 +5,7 @@ const request = require ('supertest');
 const app = express ();
 //app.disable("x-powered-by");
 
-describe('Task API Routes', function() {
+describe('User API Routes', function() {
     // This function will run before every test to clear database
     beforeEach(function(done) {
       app.db.object = {};
