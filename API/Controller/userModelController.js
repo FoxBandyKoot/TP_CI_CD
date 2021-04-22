@@ -1,6 +1,6 @@
-import userModel from '../Model/userModel'; 
+import userSchema from '../Model/userSchema'; 
 import { model } from 'mongoose'; 
-const UserModel = model('UserModel', userModel); // Création du modèle à partir du schéma
+const UserModel = model('UserModel', userSchema); // Création du modèle à partir du schéma
 
 function respond(err, result, res) { // Fonction utilisée tout au long du contrôleur pour répondre aux requetes
   if (err) {

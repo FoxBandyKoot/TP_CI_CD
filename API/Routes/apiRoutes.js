@@ -1,4 +1,4 @@
-import users from '../Controller/userController';
+import users from '../Controller/userModelController';
 
 export default function(app) {
     // Users
