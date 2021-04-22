@@ -20,8 +20,10 @@ We choose to use GitHub and Docker for all of our integration because we want to
 Indeed, most of repository are saved into GitHub, so we want to master this tool to improve our productivity.
 Finally, we want to bring all our tools into one to speed up navigation.
 
+[Tests](https://sonarcloud.io/dashboard?id=FoxBandyKoot_TP_CI_CD)
 Unit tests on ... because ...
 Security tests on ... because ...
+
 
 Difficulties encountered: New to yaml format, github actions documentation really huge => hard to know where to start
 
