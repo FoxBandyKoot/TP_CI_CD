@@ -1,4 +1,4 @@
-name: Publish Docker image
+name: Publish Docker main image
 
 on: 
   push:
@@ -17,5 +17,5 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
-          repository: foxbandykoot/tp_ci_cd/tp_ci_cd_image
+          repository: foxbandykoot/tp_ci_cd/tp_ci_cd_image-main
           tag_with_ref: true
