@@ -6,16 +6,6 @@ const app = express ();
 //app.disable("x-powered-by");
 
 describe('User API Routes', function() {
-    // This function will run before every test to clear database
-    beforeEach(function(done) {
-      app.db.object = {};
-      app.db.object.tasks = [
-        { id: uuid(), title: 'stuy', done: false },
-        { id: uuid(), title: 'wor', done: true }
-      ];
-      app.db.write();
-      done();
-    });
     // In this test it's expected a task list of two tasks
     describe('GET /user', function() {
       it('returns a list of user', function(done) {
@@ -31,7 +21,7 @@ describe('User API Routes', function() {
     describe('POST /user', function() {
       it('saves a new user', function(done) {
         request.post('/user')
-          .send({ title: 'run', done: false })
+          .send({ title: 'run', user: false })
           .expect(201)
           .end(function(err, res) {
             done(err);
@@ -42,18 +32,18 @@ describe('User API Routes', function() {
     describe('GET /user/:id', function() {
       // Testing how to find a task by id
       it('returns a user by id', function(done) {
-        var task = app.db('user').first();
-        request.get('/user' + task.id)
+        var user = app.db('user').first();
+        request.get('/user' + user.id)
           .expect(200)
           .end(function(err, res) {
-            expect(res.body).to.eql(task);
+            expect(res.body).to.eql(user);
             done(err);
           });
       });
       // Testing the status 404 for task not found
       it('returns status 404 when id is not found', function(done) {
-        var task = { id: 'fakeId' }
-        request.get('/user' + task.id)
+        var user = { id: 'fakeId' }
+        request.get('/user' + user.id)
           .expect(404)
           .end(function(err, res) {
             done(err);
@@ -62,9 +52,9 @@ describe('User API Routes', function() {
     });
     // Testing how to update a task expecting status 201 of success
     describe('PUT /user/:id', function() {
-      it('updates a task', function(done) {
-        var task = app.db('tasks').first();
-        request.put('/tasks/' + task.id)
+      it('updates a user', function(done) {
+        var task = app.db('users').first();
+        request.put('/users/' + task.id)
           .send({ title: 'travel', done: false })
           .expect(201)
           .end(function(err, res) {
@@ -74,7 +64,7 @@ describe('User API Routes', function() {
     });
     // Testing how to delete a task expecting status 201 of success
     describe('DELETE /user/:id', function() {
-      it('removes a task', function(done) {
+      it('removes a user', function(done) {
         var task = app.db('user').first();
         request.put('/user/' + task.id)
           .expect(201)
