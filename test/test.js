@@ -11,7 +11,7 @@ describe('User API Routes', function() {
       app.db.object = {};
       app.db.object.tasks = [
         { id: uuid(), title: 'stuy', done: false },
-        { id: uuid(), title: 'work', done: true }
+        { id: uuid(), title: 'wor', done: true }
       ];
       app.db.write();
       done();
