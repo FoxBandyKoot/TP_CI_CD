@@ -1,4 +1,4 @@
-name: Continuous Code Quality
+name: Analyze with SonarCloud
 
 on:
   push:
