@@ -10,7 +10,7 @@ describe('User API Routes', function() {
     beforeEach(function(done) {
       app.db.object = {};
       app.db.object.tasks = [
-        { id: uuid(), title: 'study', done: false },
+        { id: uuid(), title: 'stuy', done: false },
         { id: uuid(), title: 'work', done: true }
       ];
       app.db.write();
