@@ -5,6 +5,7 @@ import routes from './API/Routes/apiRoutes';
 import cors from 'cors'
 
 var app = express();
+app.use(cors());
 var port = process.env.port || 3000;
 
 mongoose.Promise = global.Promise;
