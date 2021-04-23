@@ -2,8 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import routes from './API/Routes/apiRoutes';
-//import cors from 'cors'
-const cors = require ('cors');
+import cors from 'cors'
 
 var app = express();
 var port = process.env.port || 3000;
@@ -20,12 +19,7 @@ db.once('open', function (){
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-app.use(cors());
-
-let corsOptions = {
-  origine: 'confiancewebsite.com' // Conforme
-};
-app.use (cors (corsOptions))
+app.use(cors({origin: true}));
 
 
 routes(app);
