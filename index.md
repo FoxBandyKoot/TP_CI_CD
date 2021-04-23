@@ -33,6 +33,7 @@ __Tests:__
 To make unit tests, we used SuperTest, Mocha, and Chaï libraries.
 
 [Quality tests are on SonarCloud because it is the most used free and open source tool to do it.](https://sonarcloud.io/dashboard?id=FoxBandyKoot_TP_CI_CD)
+
 [Security tests are on SonarCloud because it is the most used free and open source tool to do it.](https://sonarcloud.io/dashboard?id=FoxBandyKoot_TP_CI_CD)
 
 
