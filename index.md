@@ -13,10 +13,10 @@ Contributors : **Grand Maxime** & **Lerenard Charly**
 
 __Technology used :__
 
- __Front:__ 
+ __- Front:__ 
   - JavaScript 5
   
- __Back:__
+ __- Back:__
   - JavaScript 5
   - MongoDB
   
@@ -27,9 +27,9 @@ Finally, we want to bring all our tools into one to speed up navigation.
 
 __Tests:__
 
-[Unit tests on SonarCloud because it is the most used free and open source tool to do it.](https://sonarcloud.io/dashboard?id=FoxBandyKoot_TP_CI_CD)
-
-[Security tests on SonarCloud because it is the most used free and open source tool to do it.](https://sonarcloud.io/dashboard?id=FoxBandyKoot_TP_CI_CD)
+[Unit tests are on SonarCloud because it is the most used free and open source tool to do it.](https://sonarcloud.io/dashboard?id=FoxBandyKoot_TP_CI_CD)
+[Quality tests are on SonarCloud because it is the most used free and open source tool to do it.](https://sonarcloud.io/dashboard?id=FoxBandyKoot_TP_CI_CD)
+[Security tests are on SonarCloud because it is the most used free and open source tool to do it.](https://sonarcloud.io/dashboard?id=FoxBandyKoot_TP_CI_CD)
 
 
 __We check on 3 differents deployment ways possible:__
@@ -42,9 +42,20 @@ __Difficulties encountered:__
  - New to yaml format, github actions documentation really huge => hard to know where to start.
  - Deploy : since august 2019, firebase is not free anymore for deploy.
 
-__The paradigms used are:__
-... because ...
+__The paradigms and the state of the art of our devops pipeline used are:__
+The process:
+ - Create a new feature branch from develop
+ - When work on new feature branch is done : push
+ - Pull rebase from develop
+ - Merge local develop on new feature branch
+ - Check if everything OK and Definition of done (DoD)
+ - Push again 
+ - Create MR
+ - Others developers check if everything is ok :
+   - others developers are OK ? -> Developer who made the feature merge
+   - others developers are NOT OK ? -> Rework on new feature branch, push, check DoD, update MR until others developers are OK to merge
 
-__The state of the art of a devops pipeline:__
+Workflows:
+
 
 
