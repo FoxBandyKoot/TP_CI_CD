@@ -1,6 +1,7 @@
 ## Welcome to our GitHub Page !
 
 This repository concern a TP of an initiation to continous integration.
+Contributors : **Grand Maxime** & **Lerenard Charly**
 
 __Access to API:__ 
  - https://us-central1-tp-ci-cd.cloudfunctions.net/app
@@ -8,7 +9,6 @@ __Access to API:__
 __Routes:__
  - hello-world
  
-Contributors : **Grand Maxime** & **Lerenard Charly**
 
 
 __Technology used :__
@@ -20,10 +20,12 @@ __Technology used :__
   - JavaScript 5
   - MongoDB
   
-__CI:__
+  
+__Continus integration:__
 We choose to use GitHub and Docker for all of our integration because we want to centralize all of our tools into GitHub.
 Indeed, most of repository are saved into GitHub, so we want to master this tool to improve our productivity.
 Finally, we want to bring all our tools into one to speed up navigation.
+
 
 __Tests:__
 
@@ -38,9 +40,11 @@ Heroku, but limits are already known.
 Netifly, but was only for static websites.
 We choose to deploy on Firebase because it can handles more than static websites and we thinked it was free.
 
+
 __Difficulties encountered:__
  - New to yaml format, github actions documentation really huge => hard to know where to start.
  - Deploy : since august 2019, firebase is not free anymore for deploy.
+
 
 __The paradigms and the state of the art of our devops pipeline used are:__
 The process:
@@ -54,6 +58,7 @@ The process:
  - Others developers check if everything is ok :
    - others developers are OK ? -> Developer who made the feature merge
    - others developers are NOT OK ? -> Rework on new feature branch, push, check DoD, update MR until others developers are OK to merge
+
 
 Workflows:
 
