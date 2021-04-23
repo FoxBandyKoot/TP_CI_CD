@@ -2,7 +2,7 @@ var chai = require('chai');
 // var request = require('supertest')("http://localhost:3000/");
 var request = require('supertest')("https://us-central1-tp-ci-cd.cloudfunctions.net/app/")
 const chaiHttp = require("chai-http");
-// chai.use(chaiHttp);
+chai.use(chaiHttp);
 var expect = chai.expect;
 
   
