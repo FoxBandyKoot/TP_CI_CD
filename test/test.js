@@ -1,22 +1,16 @@
-const chai = require ('chai'); 
+var chai  = require('chai');
+const axios = require('axios');
 const chaiHttp = require("chai-http");
-const request = require ('supertest');
-
-const { expect } = chai;
 chai.use(chaiHttp);
 
-describe('User API Routes', function() {
+describe('User API Routes', function () {
     // In this test it's expected a task list of two tasks
-    describe('GET /user', function() {
-      it('returns a list of user', function(done) {
-        request.get('/user')
-          .expect(200)
-          .end(function(err, res) {
-            expect(res).to.have.status(200);
-            expect(res.body.status).to.equals("success");
-            done();
-          });
-      });
+    describe('GET /user', function () {
+        it('returns a list of user', async function () {
+            const response = await axios.get("/user");
+            expect(response.smotatus).to.eql(200);
+        });
+    });
     // });
     // // Testing the save task expecting status 201 of success
     // describe('POST /user', function() {
@@ -73,5 +67,4 @@ describe('User API Routes', function() {
     //         done(err);
     //       });
     //   });
-    });
-  });
+});
