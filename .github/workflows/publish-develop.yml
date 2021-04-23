@@ -1,0 +1,21 @@
+name: Publish Docker develop image 
+
+on: 
+  push:
+    branches: develop
+
+jobs:
+  push_to_registry:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+      - name: Push to GitHub Packages
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          repository: foxbandykoot/tp_ci_cd/tp_ci_cd_image-develop
+          tag_with_ref: true

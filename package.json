@@ -18,7 +18,11 @@
   },
   "homepage": "https://github.com/LeopoldBriand-bot/TPDocker#readme",
   "dependencies": {
+<<<<<<< HEAD
     "audit": "0.0.6",
+=======
+    "chai-http": "^4.3.0",
+>>>>>>> 909be3a416da3998c8f8cb1c7a2e43a94e643a55
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "fix": "0.0.6",
@@ -31,7 +35,11 @@
     "@babel/register": "^7.7.4",
     "chai": "^4.3.4",
     "mocha": "^8.3.2",
+<<<<<<< HEAD
     "nodemon": "^2.0.7",
+=======
+    "nodemon": "^1.19.4",
+>>>>>>> 909be3a416da3998c8f8cb1c7a2e43a94e643a55
     "supertest": "^6.1.3"
   }
 }
