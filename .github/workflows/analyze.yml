@@ -1,0 +1,21 @@
+name: Analyze with Trivy 
+on:
+  push:
+    branches: develop
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build an image from Dockerfile
+        run: docker build -f Dockerfile -t tp_ci_cd_security .
+      - name: Download Trivy
+        run: wget https://github.com/aquasecurity/trivy/releases/download/v0.16.0/trivy_0.16.0_Linux-64bit.deb
+      - name: Install Trivy
+        run: sudo dpkg -i trivy_0.16.0_Linux-64bit.deb
+      - name: Run Trivy vulnerability scanner
+        run: trivy image tp_ci_cd_security

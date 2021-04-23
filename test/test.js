@@ -1,29 +1,19 @@
 var chai = require('chai');
-var request = require('supertest')("http://localhost:3000/");
-// const chaiHttp = require("chai-http");
+// var request = require('supertest')("http://localhost:3000/");
+var request = require('supertest')("https://us-central1-tp-ci-cd.cloudfunctions.net/app/")
+const chaiHttp = require("chai-http");
 // chai.use(chaiHttp);
-var nock = require("nock")
 var expect = chai.expect;
 
 
 describe('User API Routes', function () {
     // In this test it's expected a task list of two tasks
-    describe('GET /user', function () {
+    describe('GET /hello-world', function () {
         it('returns a list of user', async function () {
-            let response = await request.get("user");
+            let response = await request.get("hello-world");
             expect(response.status).to.eql(200);
-            response = await request.get("userFAIL");
+            response = await request.get("hello-world-FAIL");
             expect(response.status).to.eql(404);
-            
-            // let response = nock("http://localhost:3000").get("/user/").reply(200, {
-            //     "status": 200,
-            //     "message": "this is a  mocked response"
-            // });
-            // expect(response.status).to.eql(200);
-            // expect(res.body.message).to.equal("This is a mocked response");
-            
-            // let responseFail = await request.get("userFail");
-            // expect(responseFail.status).to.eql(404);
         });
     });
 
