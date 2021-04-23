@@ -1,16 +1,20 @@
-var chai  = require('chai');
-const axios = require('axios');
-const chaiHttp = require("chai-http");
-chai.use(chaiHttp);
+var chai = require('chai');
+var request = require('supertest')("http://localhost:3000/");
+// const chaiHttp = require("chai-http");
+// chai.use(chaiHttp);
+
+var expect = chai.expect;
+
 
 describe('User API Routes', function () {
     // In this test it's expected a task list of two tasks
     describe('GET /user', function () {
         it('returns a list of user', async function () {
-            const response = await axios.get("/user");
-            expect(response.smotatus).to.eql(200);
+            const response = await request.get("usereazeaz");
+            expect(response.status).to.eql(200);
         });
     });
+
     // });
     // // Testing the save task expecting status 201 of success
     // describe('POST /user', function() {
