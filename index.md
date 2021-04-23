@@ -23,6 +23,7 @@ __Technology used :__
   
   
 __Continus integration:__
+
 We choose to use GitHub and Docker for all of our integration because we want to centralize all of our tools into GitHub.
 Indeed, most of repository are saved into GitHub, so we want to master this tool to improve our productivity.
 Finally, we want to bring all our tools into one to speed up navigation.
@@ -50,6 +51,7 @@ __Difficulties encountered:__
 
 
 __The paradigms and the state of the art of our devops pipeline used are:__
+
 The process:
  - Create a new feature branch from develop
  - When work on new feature branch is done : push
@@ -70,7 +72,8 @@ Workflows:
  - On develop - analyze.yml : Scan dependance packages (security container)
  - On main - publish-main.yml : Build docker main image on github packages tab **(production line)**
 
-Notifications: On discord
+Notifications: 
+ - On discord with webhooks
 
 Deployment: 
  - 2 steps
