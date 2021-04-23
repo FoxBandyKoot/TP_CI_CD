@@ -14,4 +14,11 @@ jobs:
       - name: Build an image from Dockerfile
         run: docker build -f Dockerfile -t tp_ci_cd_security .
       - name: Run Trivy vulnerability scanner
-        run: trivy image tp_ci_cd_security
+        run:
+           - sudo apt-get install wget apt-transport-https gnupg lsb-release
+           - wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add -
+           - echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | sudo tee -a /etc/apt/sources.list.d/trivy.list
+           - sudo apt-get update
+           - sudo apt-get install trivy
+
+           - trivy image tp_ci_cd_security
