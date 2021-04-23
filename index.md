@@ -9,7 +9,8 @@ __Access to API:__
 __Routes:__
  - hello-world
  
-
+__Our documentation is on:__
+foxbandykoot.github.io/tp_ci_cd/
 
 __Technology used :__
 
@@ -29,7 +30,8 @@ Finally, we want to bring all our tools into one to speed up navigation.
 
 __Tests:__
 
-[Unit tests are on SonarCloud because it is the most used free and open source tool to do it.](https://sonarcloud.io/dashboard?id=FoxBandyKoot_TP_CI_CD)
+To make unit tests, we used SuperTest, Mocha, and Chaï libraries.
+
 [Quality tests are on SonarCloud because it is the most used free and open source tool to do it.](https://sonarcloud.io/dashboard?id=FoxBandyKoot_TP_CI_CD)
 [Security tests are on SonarCloud because it is the most used free and open source tool to do it.](https://sonarcloud.io/dashboard?id=FoxBandyKoot_TP_CI_CD)
 
@@ -61,6 +63,17 @@ The process:
 
 
 Workflows:
+ - On develop - build.yml: SonarCloud for quality code (code smell), security code
+ - On develop - test.yml : Units test (functionnality)
+ - On develop - publish-develop.yml : Build and publy docker develop image on github packages tab
+ - On develop - analyze.yml : Scan dependance packages (security container)
+ - 
+ - On main - publish-main.yml : Build docker main image on github packages tab **(production line)**
 
+Notifications: On discord
 
-
+Deployment: 
+ - 2 steps
+   - staging line : use `firebase deploy` on branch develop
+   - production line : use `firebase deploy` on branch main
+ These 2 branchs must have two differents URLs.
