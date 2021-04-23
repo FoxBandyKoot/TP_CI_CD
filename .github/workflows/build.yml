@@ -2,7 +2,7 @@ name: Analyze with SonarCloud
 
 on:
   push:
-    branches: main
+    branches: develop
 
 jobs:
   sonarcloud:
