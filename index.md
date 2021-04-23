@@ -67,7 +67,6 @@ Workflows:
  - On develop - test.yml : Units test (functionnality)
  - On develop - publish-develop.yml : Build and publy docker develop image on github packages tab
  - On develop - analyze.yml : Scan dependance packages (security container)
- - 
  - On main - publish-main.yml : Build docker main image on github packages tab **(production line)**
 
 Notifications: On discord
