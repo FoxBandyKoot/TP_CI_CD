@@ -1,12 +1,6 @@
-<<<<<<< HEAD:API/Controller/userController.js
-import userModel from "../Model/userModel"; 
-import { model } from "mongoose"; 
-const UserModel = model("UserModel", userModel); // Création du modèle à partir du schéma
-=======
 import userSchema from '../Model/userSchema'; 
 import { model } from 'mongoose'; 
 const UserModel = model('UserModel', userSchema); // Création du modèle à partir du schéma
->>>>>>> 909be3a416da3998c8f8cb1c7a2e43a94e643a55:API/Controller/userModelController.js
 
 function respond(err, result, res) { // Fonction utilisée tout au long du contrôleur pour répondre aux requetes
   if (err) {
